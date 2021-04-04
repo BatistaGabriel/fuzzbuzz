@@ -17,12 +17,9 @@ namespace FuzzBuzz.Tests
         {
             //Arrange
             int input = 3;
-            string output = string.Empty;
             
             //Act
-            if(input %3 == 0){
-                output += "Fuzz";
-            }
+            string output = FuzzerBuzzer.GetValue(input);
 
             //Assert
             Assert.AreEqual("Fuzz", output);
@@ -39,6 +36,8 @@ namespace FuzzBuzz.Tests
         public void FuzzBuzz_WhenModOfFiveEqualsZero_ReturnsStringBuzz(){
             //Arrange
             int input = 5;
+            
+            //Act
             string output = FuzzerBuzzer.GetValue(input);
 
             //Assert
@@ -58,6 +57,8 @@ namespace FuzzBuzz.Tests
         public void FuzzBuzz_WhenModOfThreeAndModOfFiveEqualsZero_ReturnsStringFuzzBuzz(){
             //Arrange
             int input = 15;
+            
+            //Act
             string output = FuzzerBuzzer.GetValue(input);
 
             //Assert
@@ -77,6 +78,8 @@ namespace FuzzBuzz.Tests
         public void FuzzBuzz_WhenModOfThreeAndModOfFiveNotEqualsZero_ReturnsInputAsString(){
             //Arrange
             int input = 1;
+            
+            //Act
             string output = FuzzerBuzzer.GetValue(input);
 
             //Assert

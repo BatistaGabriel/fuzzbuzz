@@ -2,7 +2,7 @@
 
 namespace FuzzBuzz.Library
 {
-    public class FuzzerBuzzer
+    public static class FuzzerBuzzer
     {
         /// <summary>
         /// This method will return return a string based on the following rule:
@@ -16,7 +16,7 @@ namespace FuzzBuzz.Library
         /// </summary>
         /// <param name="input">The value that will be checked</param>
         /// <returns></returns>
-        public string GetValue(int input){
+        public static string GetValue(int input){
             string output = string.Empty;
 
             if(IsModOfThreeEqualsZero(input)){
@@ -40,7 +40,7 @@ namespace FuzzBuzz.Library
         /// </summary>
         /// <param name="input">The value that will be checked</param>
         /// <returns></returns>
-        private bool IsModOfThreeEqualsZero(int input){
+        private static bool IsModOfThreeEqualsZero(int input){
             return input %3 == 0;
         }
 
@@ -50,7 +50,7 @@ namespace FuzzBuzz.Library
         /// </summary>
         /// <param name="input">The value that will be checked</param>
         /// <returns></returns>
-        private bool IsModOfFiveEqualsZero(int input){
+        private static bool IsModOfFiveEqualsZero(int input){
             return input %5 == 0;
         }
     }

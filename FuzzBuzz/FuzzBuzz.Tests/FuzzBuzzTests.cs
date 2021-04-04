@@ -76,5 +76,37 @@ namespace FuzzBuzz.Tests
             //Assert
             Assert.AreEqual("FuzzBuzz", output);
         }
+
+        /// <summary>
+        /// Given an integer input
+        /// <para />
+        /// When the mod of the division by three is not equal zero
+        /// <para />
+        /// And also the mod of the division by five is not equal zero
+        /// <para />
+        /// Than fill up the output varible with the inputed value as a string
+        /// </summary>
+        [Test]
+        public void FuzzBuzz_WhenModOfThreeAndModOfFiveNotEqualsZero_ReturnsInputAsString(){
+            //Arrange
+            int input = 1;
+            string output = string.Empty;
+
+            //Act
+            if(input %3 == 0){
+                output += "Fuzz";
+            }
+
+            if(input %5 == 0){
+                output += "Buzz";
+            }
+
+            if(string.IsNullOrEmpty(output)){
+                output = input.ToString();
+            }
+
+            //Assert
+            Assert.AreEqual(input.ToString(), output);
+        }
     }
 }

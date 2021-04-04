@@ -13,11 +13,8 @@ namespace FuzzBuzz.Tests
         /// Than fill up the output varible with the string "Fuzz"
         /// </summary>
         [Test]
-        public void FuzzBuzz_WhenModOfThreeEqualsZero_ReturnsStringFuzz()
-        {
-            //Arrange
-            int input = 3;
-            
+        public void FuzzBuzz_WhenModOfThreeEqualsZero_ReturnsStringFuzz([Values(3, 6, 9, 12)]int input)
+        {   
             //Act
             string output = FuzzerBuzzer.GetValue(input);
 
@@ -33,10 +30,8 @@ namespace FuzzBuzz.Tests
         /// Than fill up the output varible with the string "Buzz"
         /// </summary>
         [Test]
-        public void FuzzBuzz_WhenModOfFiveEqualsZero_ReturnsStringBuzz(){
-            //Arrange
-            int input = 5;
-            
+        public void FuzzBuzz_WhenModOfFiveEqualsZero_ReturnsStringBuzz([Values(5, 10, 20)]int input)
+        {
             //Act
             string output = FuzzerBuzzer.GetValue(input);
 
@@ -54,10 +49,8 @@ namespace FuzzBuzz.Tests
         /// Than fill up the output varible with the string "FuzzBuzz"
         /// </summary>
         [Test]
-        public void FuzzBuzz_WhenModOfThreeAndModOfFiveEqualsZero_ReturnsStringFuzzBuzz(){
-            //Arrange
-            int input = 15;
-            
+        public void FuzzBuzz_WhenModOfThreeAndModOfFiveEqualsZero_ReturnsStringFuzzBuzz([Values(15)]int input)
+        {
             //Act
             string output = FuzzerBuzzer.GetValue(input);
 
@@ -75,10 +68,8 @@ namespace FuzzBuzz.Tests
         /// Than fill up the output varible with the inputed value as a string
         /// </summary>
         [Test]
-        public void FuzzBuzz_WhenModOfThreeAndModOfFiveNotEqualsZero_ReturnsInputAsString(){
-            //Arrange
-            int input = 1;
-            
+        public void FuzzBuzz_WhenModOfThreeAndModOfFiveNotEqualsZero_ReturnsInputAsString([Values(1, 2, 4, 8, 11)]int input)
+        {
             //Act
             string output = FuzzerBuzzer.GetValue(input);
 

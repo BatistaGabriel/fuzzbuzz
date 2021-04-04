@@ -1,12 +1,18 @@
 ﻿using System;
+using FuzzBuzz.Library;
 
 namespace FuzzBuzz.ConsoleApp
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            for (int i = 1; i <= 100; i++)
+            {
+                Console.WriteLine(FuzzerBuzzer.GetValue(i));
+            }
+
+            Console.ReadLine();
         }
     }
 }

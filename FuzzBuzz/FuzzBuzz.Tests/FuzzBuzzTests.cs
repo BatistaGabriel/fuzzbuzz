@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using FuzzBuzz.Library;
 
 namespace FuzzBuzz.Tests
 {
@@ -38,12 +39,7 @@ namespace FuzzBuzz.Tests
         public void FuzzBuzz_WhenModOfFiveEqualsZero_ReturnsStringBuzz(){
             //Arrange
             int input = 5;
-            string output = string.Empty;
-
-            //Act
-            if(input %5 == 0){
-                output += "Buzz";
-            }
+            string output = FuzzerBuzzer.GetValue(input);
 
             //Assert
             Assert.AreEqual("Buzz", output);
@@ -62,16 +58,7 @@ namespace FuzzBuzz.Tests
         public void FuzzBuzz_WhenModOfThreeAndModOfFiveEqualsZero_ReturnsStringFuzzBuzz(){
             //Arrange
             int input = 15;
-            string output = string.Empty;
-
-            //Act
-            if(input %3 == 0){
-                output += "Fuzz";
-            }
-
-            if(input %5 == 0){
-                output += "Buzz";
-            }
+            string output = FuzzerBuzzer.GetValue(input);
 
             //Assert
             Assert.AreEqual("FuzzBuzz", output);
@@ -90,20 +77,7 @@ namespace FuzzBuzz.Tests
         public void FuzzBuzz_WhenModOfThreeAndModOfFiveNotEqualsZero_ReturnsInputAsString(){
             //Arrange
             int input = 1;
-            string output = string.Empty;
-
-            //Act
-            if(input %3 == 0){
-                output += "Fuzz";
-            }
-
-            if(input %5 == 0){
-                output += "Buzz";
-            }
-
-            if(string.IsNullOrEmpty(output)){
-                output = input.ToString();
-            }
+            string output = FuzzerBuzzer.GetValue(input);
 
             //Assert
             Assert.AreEqual(input.ToString(), output);

@@ -4,21 +4,21 @@
 ## First Scenario ✔
 > Given an integer input
 - > When the mod of the division by three is equal zero
-- > Than fill up the output varible with the string "Fuzz"
+- > Then fill up the output variable with the string "Fuzz"
 
 ## Second Scenario ✔
 > Given an integer input
 - > When the mod of the division by five is equal zero
-- > Than fill up the output varible with the string "Buzz"
+- > Then fill up the output variable with the string "Buzz"
 
 ## Third Scenario ✔
 > Given an integer input
 - > When the mod of the division by three is equal zero
     - > And also the mod of the division by five is equal zero
-- > Than fill up the output varible with the string "FuzzBuzz"
+- > Then fill up the output variable with the string "FuzzBuzz"
 
 ## Fourth Scenario ✔
 > Given an integer input
 - > When the mod of the division by three is not equal zero
     - > And also the mod of the division by five is not equal zero
-- > Than fill up the output varible with the inputed value as a string
+- > Then fill up the output variable with the input value as a string
